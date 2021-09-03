@@ -1,86 +1,64 @@
 package com.company;
 
-import java.util.*;
-import java.util.function.Consumer;
-
 public class Main {
 
     static class Item{
         private final String value;
-        private final List<Item> children = new ArrayList<>();
+        private Item next;
 
         public Item(String value) {
             this.value = value;
         }
 
-        public void add(Item child) {
-            this.children.add( child );
+        public void add(Item next) {
+            this.next = next;
         }
 
         public String getValue() {
             return value;
         }
 
-        public List<Item> getChildren() {
-            return Collections.unmodifiableList(children);
+        public Item getNext() {
+            return this.next;
         }
 
-        public void applyToAll(Consumer<Item> consumer){
-            consumer.accept(this);
-            children.forEach(kid -> kid.applyToAll(consumer));
-        }
-
-        public void applyBreadthFirst(Consumer<Item> consumer){
-            Queue<Item> toProcess = new LinkedList<>();
-            toProcess.add(this);
-            Item next = null;
-            while ((next =toProcess.poll()) != null){
-                toProcess.addAll(next.getChildren());
-                consumer.accept(next);
-            }
-
-        }
 
     }
 
-//    public static Item list( String firstValue, Item nextItem  ){
-//        Item newItem = new Item( firstValue);
-//        newItem.setNext(nextItem);
-//        return newItem;
-//    }
-//
-
-    public static Item tree( String value, Item ... children ){
-        Item root = new Item(value);
-        Arrays.stream(children).sequential().forEach(root::add);
-        return root;
+    public static Item list( String firstValue, Item nextItem  ){
+        Item newItem = new Item( firstValue);
+        newItem.add(nextItem);
+        return newItem;
     }
 
     public static void main(String[] args) {
-//	    //create 1, 2, 3, apple, orange, banana
-//        Item head = list("1", list("2", list("3", list("apple", list("orange", list("banana", null))))));
-//        // print all items of the list using for loop
-//
-//        for( Item item = head; item != null; item = item.getNext() ){
-//            System.out.println(item.getValue());
-//        }
-//
-//        //print all items without for loop
-//        head.forEach(i -> System.out.println(i.getValue()));
+        //create 1, 2, 3, apple, orange, banana (not using constructor)
 
-        //turn this into a tree:
+        // print all items of the list using for() loop
+
+        //print all items without for loop (you may add a new method to Main or to Item or whatever you need )
+
+        //turn this into a tree (of course, significant changes in Item are needed):
         //            root
         //    numbers     fruits
         //  1    2    3   apple orange banana
 
-        Item root = tree("root",
-                        tree("numbers",
-                                new Item("1"), new Item("2"), new Item("3")),
-                        tree( "fruits",
-                                new Item("apple"), new Item("orange"), new Item("banana"))
-                );
+        //go over the tree and print all items, depth first
 
-        root.applyBreadthFirst(i -> System.out.println(i.getValue()));
+        //same but now breadth first
+
+        //define a graph of air flights using Item:
+        //Los Angeles <-> San Francisco
+        //Los Angeles <-> New York
+        //San Francisco <-> New York
+        //San Francisco <-> Boulder
+
+
+        // add length of each flight in hours
+
+        // calculate the total length of flight for all connections between two cities
+        // test for Boulder -> New York
+
 
     }
 }
