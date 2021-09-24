@@ -10,7 +10,7 @@ public class Main {
             this.value = value;
         }
 
-        public void add(Item next) {
+        public void setNext(Item next) {
             this.next = next;
         }
 
@@ -22,41 +22,63 @@ public class Main {
             return this.next;
         }
 
+        /*helper methods*/
+
+        public static Item first(String value) {
+            return new Item(value);
+        }
+
+        public Item add(String itemValue){
+            Item anotherItem = new Item( itemValue );
+            this.setNext(anotherItem);
+            return anotherItem;
+        }
 
     }
 
-    public static Item list( String firstValue, Item nextItem  ){
-        Item newItem = new Item( firstValue);
-        newItem.add(nextItem);
-        return newItem;
+    public static void pr( Item item ){
+        System.out.print(""+item.getValue());
+        if(item.getNext() != null){
+            System.out.print(",");
+            pr(item.getNext());
+        }
     }
 
     public static void main(String[] args) {
-        //create 1, 2, 3, apple, orange, banana (not using constructor)
+        //create a linked list using only Item class constructor, setters and getters :
+        //   apple, orange, banana, cat, dog, horse
 
-        // print all items of the list using for() loop
+        //do the same, using not using constructor
 
-        //print all items without for loop (you may add a new method to Main or to Item or whatever you need )
+        // print values of all items of the list using `while` loop . You can use `for` loop if you want
 
-        //turn this into a tree (of course, significant changes in Item are needed):
-        //            root
-        //    numbers     fruits
-        //  1    2    3   apple orange banana
+        //print all items without `while` loop (you may want to add another method to Item class )
+
+
+        //change Item to be able to build a tree instead of a list.
+        // Create this tree:
+        //                root
+        //             /        \
+        //            /          \
+        //         pets           fruits
+        //      /  |  \         /  |    \
+        //  cat, dog, horse  apple orange banana
 
         //go over the tree and print all items, depth first
 
         //same but now breadth first
 
-        //define a graph of air flights using Item:
+        //using same Item class, define a graph of air flights :
         //Los Angeles <-> San Francisco
         //Los Angeles <-> New York
-        //San Francisco <-> New York
-        //San Francisco <-> Boulder
+        //New York <-> Boulder
 
+        // write a code that can find a route between two cities
+        // find a way from LA to boulder
 
         // add length of each flight in hours
 
-        // calculate the total length of flight for all connections between two cities
+        // write calculate the total length of flight for all connections between two cities
         // test for Boulder -> New York
 
 
