@@ -36,6 +36,7 @@ public class Main {
     }
 
     public static void printList( Item item ){
+        System.out.print("[");
         do{
             System.out.print(item.value);
             item = item.getNext();
@@ -43,6 +44,7 @@ public class Main {
                 System.out.print(",");
             }
         }while( item != null );
+        System.out.println("]");
     }
 
     public static void main(String[] args) {
