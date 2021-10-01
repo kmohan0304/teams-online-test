@@ -22,7 +22,7 @@ public class Main {
             return this.next;
         }
 
-        /*helper methods*/
+        /*helper methods for chain call*/
 
         public static Item first(String value) {
             return new Item(value);
@@ -34,22 +34,42 @@ public class Main {
             return anotherItem;
         }
 
-    }
-
-    public static void pr( Item item ){
-        System.out.print(""+item.getValue());
-        if(item.getNext() != null){
-            System.out.print(",");
-            pr(item.getNext());
+        public static void printList( Item item ){
+            do{
+                System.out.print(item.value);
+                item = item.getNext();
+                if(item != null){
+                    System.out.print(",");
+                }
+            }while( item != null );
         }
+
     }
 
     public static void main(String[] args) {
-        //create a linked list using only Item class constructor, setters and getters :
-        //   apple, orange, banana, cat, dog, horse
+        //Task 0. Example
+        // Please, create a linked list of Item with following values, using only its constructor,
+        // setters and getters:
+        // "apple", "orange", "banana", "cat", "dog", "horse"
 
-        //do the same, using not using constructor
+        Item apple = new Item("apple");
+        Item orange = new Item("orange");
+        Item banana = new Item("banana");
+        Item cat = new Item("cat");
+        Item dog = new Item("dog");
+        Item horse = new Item("horse");
+        apple.setNext(orange);
+        orange.setNext(banana);
+        banana.setNext(cat);
+        cat.setNext(dog);
+        dog.setNext(horse);
 
+        Item.printList( apple );
+
+        //Task 1. Understanding helper methods
+        //do the same, but not using the Item constructor, preferably in one line of code
+
+        //Task 2.
         // print values of all items of the list using `while` loop . You can use `for` loop if you want
 
         //print all items without `while` loop (you may want to add another method to Item class )
