@@ -95,7 +95,7 @@ public class Main {
         // Task 7. Visitor
         // Please, modify the method from Task 6 to be able to apply any code to every item in the
         // tree, without changing the method.
-        // To tes, write a code that only prints item values if they are longer than 3 characters.
+        // To test, write a code that only prints item values if they are longer than 3 characters.
 
         // Task 7. Graph data structure
         // Here is the information about cities connected by direct flights:
@@ -109,7 +109,7 @@ public class Main {
         // Task 8. Navigating the graph.
         // Please, write a separate method that can find a route between two given cities using data
         // structure from Task 7.
-        // Using this method, find a way from LA to Boulder.
+        // Using this method, find a way from SF to Boulder.
 
 
 
