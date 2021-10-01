@@ -147,6 +147,20 @@ public class Main {
         Item.print(copyHead);
         */
 
+
+
+        //change Item to be able to build a tree instead of a list.
+        // Create this tree:
+        //                root
+        //             /        \
+        //            /          \
+        //         pets           fruits
+        //      /  |  \         /  |    \
+        //  cat, dog, horse  apple orange banana
+
+        //go over the tree and print all items, depth first
+
+        //same but now breadth first
         Item root = Item.first("root");
 
         Item pet = root.add("pets");
@@ -168,19 +182,6 @@ public class Main {
 
         dfs(root, 0);
         bfs(root);
-
-        //change Item to be able to build a tree instead of a list.
-        // Create this tree:
-        //                root
-        //             /        \
-        //            /          \
-        //         pets           fruits
-        //      /  |  \         /  |    \
-        //  cat, dog, horse  apple orange banana
-
-        //go over the tree and print all items, depth first
-
-        //same but now breadth first
 
         //using same Item class, define a graph of air flights :
         //Los Angeles <-> San Francisco
