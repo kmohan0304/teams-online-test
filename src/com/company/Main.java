@@ -22,7 +22,7 @@ public class Main {
             return this.next;
         }
 
-        /*helper methods for chain call*/
+        /*helper methods for chain calls*/
 
         public static Item first(String value) {
             return new Item(value);
@@ -33,17 +33,16 @@ public class Main {
             this.setNext(anotherItem);
             return anotherItem;
         }
+    }
 
-        public static void printList( Item item ){
-            do{
-                System.out.print(item.value);
-                item = item.getNext();
-                if(item != null){
-                    System.out.print(",");
-                }
-            }while( item != null );
-        }
-
+    public static void printList( Item item ){
+        do{
+            System.out.print(item.value);
+            item = item.getNext();
+            if(item != null){
+                System.out.print(",");
+            }
+        }while( item != null );
     }
 
     public static void main(String[] args) {
@@ -64,7 +63,7 @@ public class Main {
         cat.setNext(dog);
         dog.setNext(horse);
 
-        Item.printList( apple );
+        printList( apple );
 
         // Task 1. Understanding helper methods
         // Please, create the same list, but now do not use the Item constructor.
