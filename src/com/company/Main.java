@@ -22,12 +22,7 @@ public class Main {
             return this.next;
         }
 
-        /*helper methods for chain calls*/
-
-        public static Item first(String value) {
-            return new Item(value);
-        }
-
+        /*helper method for chain calls*/
         public Item add(String itemValue){
             Item anotherItem = new Item( itemValue );
             this.setNext(anotherItem);
@@ -67,9 +62,9 @@ public class Main {
 
         printList( apple );
 
-        // Task 1. Understanding helper methods
-        // Please, create the same list, but now do not use the Item constructor.
-        // Preferably do it in one line of code
+        // Task 1. Understanding API
+        // Please, create the same list, but now without using setNext() method.
+        // Preferably do it in two lines of code.
 
         // Task 2. Navigating the list
         // Please, print all items of the list form Task 1 using `while` loop.
