@@ -44,8 +44,8 @@ public class Main {
 
     public static void main(String[] args) {
         //Task 0. Example
-        // Please, create a linked list of Item with following values, using only its constructor,
-        // setters and getters:
+        // Please, create a linked list of Item with following values, using only its constructor
+        // and setNext() method:
         // "apple", "orange", "banana", "cat", "dog", "horse"
 
         Item apple = new Item("apple");
@@ -92,21 +92,22 @@ public class Main {
         // Task 6. Navigating the tree, another strategy
         // Please, implement another method that does the same, but now breadth first.
 
-        // Task 7. Visitor
+        // Task 7. "Visitor" Pattern
         // Please, modify the method from Task 6 to be able to apply any code to every item in the
         // tree, without changing the method.
-        // To test, write a code that only prints item values if they are longer than 3 characters.
+        // To test, use this method that goes over all items and print
+        // only values longer than 3 characters.
 
-        // Task 7. Graph data structure
+        // Task 8. Graph data structure
         // Here is the information about cities connected by direct flights:
         // Los Angeles <-> San Francisco
         // Los Angeles <-> New York
         // New York <-> Boulder
-        // Before you start coding, please, anser this question:
-        // "Do you need any changes in Item class code to be able to store this information?"
+        // Before you start coding, please, answer this question:
+        // "Do you need any changes in Item class to be able to store this information?"
         // Please, create a data structure using Item class to capture this information.
 
-        // Task 8. Navigating the graph.
+        // Task 9. Navigating the graph.
         // Please, write a separate method that can find a route between two given cities using data
         // structure from Task 7.
         // Using this method, find a way from SF to Boulder.
